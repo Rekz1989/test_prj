@@ -73,27 +73,7 @@ Node* BTree::max() { // максимум
     return current;
 }
 Node* BTree::remove(int key) { // удаление
-    Node* current = root;
-    if (current == nullptr) { return nullptr; }
-    find(key);
-    if (current->left == nullptr) {
-        Node* temp = current->right;
-        delete current;
-        return temp;
-    }
-    else if (current->right == nullptr) {
-        Node* temp = current->left;
-        delete current;
-        return temp;
-    }
-    Node* temp = current->right;
-    while (temp->left != nullptr) {
-        temp = temp->left;
-    }
-    current->data = temp->data;
-
-    current->right = remove(temp->data);
-
+    Node* current = nullptr;
     return current;
 }
 
